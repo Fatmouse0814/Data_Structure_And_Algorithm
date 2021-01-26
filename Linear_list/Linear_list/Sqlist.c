@@ -121,11 +121,45 @@ Status List_delete(SqListPtr L, int pos)
 //查找前驱
 Status List_Prior(SqListPtr L, int pos, ElemType * elem)
 {
-
+	Status s = range_error;
+	if (L)
+	{
+		if (pos > 1 && pos <= L->length)
+		{
+			*elem = L->elem[pos - 1];
+			s = success;
+		}
+	}
+	return s;
 }
 
 //查找后继
 Status List_Next(SqListPtr L, int pos, ElemType *elem)
 {
-
+	Status s = range_error;
+	if (L)
+	{
+		if (pos > 0 && pos < L->length)
+		{
+			*elem = L->elem[pos + 1];
+			s = success;
+		}
+	}
+	return s;
+}
+//打印列表
+void List_Print(SqListPtr L)
+{
+	int i;
+	if (L)
+	{
+		for (i = 1; i <= L->length; i++)
+		{
+			printf("%d ", L->elem[i]);
+			if (i % 10 == 0)
+			{
+				printf("\n");
+			}
+		}
+	}
 }
