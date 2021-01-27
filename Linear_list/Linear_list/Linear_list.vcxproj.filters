@@ -21,6 +21,9 @@
     <ClInclude Include="SqList.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="TestSqList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Linear_list.rc">
@@ -29,6 +32,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sqlist.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TestSqList.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

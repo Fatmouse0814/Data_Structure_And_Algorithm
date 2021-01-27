@@ -5,7 +5,7 @@
 Status List_Init(SqListPtr L)
 {
 	Status s = fail;
-	if (L == NULL)
+	if (L != NULL)
 	{
 		L->elem = (ElemType *)malloc(LIST_INIT_SIZE * sizeof(ElemType));
 		if (L->elem)
@@ -63,7 +63,7 @@ Status List_Retrival(SqListPtr L, int pos, ElemType *elem)
 Status List_Locate(SqListPtr L, ElemType elem, int *pos)
 {
 	Status s = range_error;
-	int i = i;
+	int i ;
 	if (L)
 	{
 		for (i = 1; i <= L->length; i++)
@@ -83,15 +83,16 @@ Status List_Locate(SqListPtr L, ElemType elem, int *pos)
 Status List_Insert(SqListPtr L, int pos, ElemType elem)
 {
 	Status s = range_error;
+	int i;
 	if (pos >= 1 && pos <= L->length + 1) 
 	{
 		if (L && L->length < L->list_size) 
 		{
-			for (int i = L->length - 1; i >= pos - 1; i--) 
+			for (i = L->length; i >= pos; i--) 
 			{
 				L->elem[i + 1] = L->elem[i];
 			}
-			L->elem[pos - 1] = elem;
+			L->elem[i+1] = elem;
 			L->length++;
 			s = success;
 		}
@@ -161,5 +162,6 @@ void List_Print(SqListPtr L)
 				printf("\n");
 			}
 		}
+		printf("\n");
 	}
 }

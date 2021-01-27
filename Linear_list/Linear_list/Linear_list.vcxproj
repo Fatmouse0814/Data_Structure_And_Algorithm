@@ -125,12 +125,15 @@
   <ItemGroup>
     <ClInclude Include="resource.h" />
     <ClInclude Include="SqList.h" />
+    <ClInclude Include="TestSqList.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Linear_list.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.c" />
     <ClCompile Include="Sqlist.c" />
+    <ClCompile Include="TestSqList.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
